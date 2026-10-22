@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>100 razones para volver a intentarlo, mi Blanquita</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#fff5f8;--bg2:#ffe3ec;--card:#ffffff;--pink:#f6b5c8;--rose:#d9738f;--text:#6b4150;--soft:#b98a9a;--shadow:rgba(217,115,143,.18);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2b1d23;--bg2:#3a2530;--card:#47303a;--pink:#e8a3b8;--rose:#f3b3c6;--text:#fbe9ef;--soft:#d9aab9;--shadow:rgba(0,0,0,.3);color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#2b1d23;--bg2:#3a2530;--card:#47303a;--pink:#e8a3b8;--rose:#f3b3c6;--text:#fbe9ef;--soft:#d9aab9;--shadow:rgba(0,0,0,.3);color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--bg1),var(--bg2));min-height:100vh;overflow-x:hidden}
+.hero{text-align:center;padding:90px 20px 50px;position:relative}
+.hero .heart{font-size:56px;animation:beat 1.6s infinite}
+h1{font-family:'Dancing Script',cursive,serif;font-size:clamp(40px,9vw,76px);color:var(--rose);margin:10px 0}
+.hero p{max-width:560px;margin:0 auto;font-size:18px;line-height:1.7;color:var(--soft)}
+.badge{display:inline-block;margin-top:26px;padding:10px 22px;background:var(--card);border-radius:40px;box-shadow:0 6px 20px var(--shadow);font-weight:600;color:var(--rose)}
+.grid{max-width:1050px;margin:0 auto;padding:20px 18px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border-radius:22px;padding:22px 20px;box-shadow:0 8px 24px var(--shadow);border-top:4px solid var(--pink);opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.card.show{opacity:1;transform:none}
+.num{font-family:'Dancing Script',cursive,serif;font-size:30px;color:var(--rose)}
+.card p{line-height:1.6;font-size:16px;margin-top:4px}
+.final{text-align:center;padding:50px 20px 90px;max-width:640px;margin:0 auto}
+.final h2{font-family:'Dancing Script',cursive,serif;font-size:clamp(34px,7vw,56px);color:var(--rose);margin-bottom:14px}
+.final p{line-height:1.8;font-size:18px;margin-bottom:26px}
+button{font:inherit;font-weight:600;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,#f3a0ba,#d9738f);padding:14px 32px;border-radius:40px;box-shadow:0 8px 22px var(--shadow)}
+#yes{display:none;margin-top:24px;font-family:'Dancing Script',cursive,serif;font-size:34px;color:var(--rose)}
+.fl{position:fixed;bottom:-40px;pointer-events:none;animation:up linear forwards;z-index:5}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="heart">💗</div>
+  <h1>Mi Blanquita, 100 razones para intentarlo otra vez</h1>
+  <p>Cada una nace del corazón. Léelas despacio, como quien vuelve a abrir una puerta que nunca quiso cerrar del todo.</p>
+  <span class="badge" id="count">Razón 1 a 100</span>
+</header>
+<main class="grid" id="grid"></main>
+<section class="final">
+  <h2>¿Lo intentamos otra vez, mi Blanquita?</h2>
+  <p>Cien razones y una sola respuesta que espero: tú y yo, con más amor, más paciencia y las mismas ganas del primer día.</p>
+  <button id="btn">Sí, intentémoslo 💕</button>
+  <div id="yes">Gracias, mi Blanquita. Te prometo cuidar este amor cada día. 💗</div>
+</section>
+<script>
+const R=[
+"Porque tu sonrisa, mi Blanquita, ilumina hasta mis días más grises.",
+"Porque a tu lado aprendí que el amor se construye con paciencia y ternura.",
+"Porque nadie me abraza como tú: sentirte cerca es sentirme en casa.",
+"Porque tu risa es mi canción favorita.",
+"Porque contigo hasta los momentos simples se vuelven recuerdos hermosos.",
+"Porque, mi Blanquita, eres la calma que mi corazón siempre busca.",
+"Porque cometí errores, pero también aprendí a amarte mejor.",
+"Porque tus ojos me hablan sin decir una sola palabra.",
+"Porque cada vez que pienso en ti, el mundo se ve más bonito.",
+"Porque el amor verdadero merece una segunda oportunidad.",
+"Porque tu voz tiene el poder de tranquilizarme el alma.",
+"Porque me haces querer ser una mejor persona.",
+"Porque tu ternura es mi refugio favorito.",
+"Porque nadie entiende mis silencios como tú, mi Blanquita.",
+"Porque contigo aprendí que amar es elegirnos todos los días.",
+"Porque tu nombre me suena a suspiro y a hogar.",
+"Porque tus abrazos curan lo que las palabras no alcanzan.",
+"Porque todavía me emociono con tus mensajes como la primera vez.",
+"Porque tu forma de cuidar a los demás me enamora cada día más.",
+"Porque contigo el futuro se imagina bonito.",
+"Porque eres mi pensamiento favorito al despertar.",
+"Porque, mi Blanquita, lo nuestro nunca dejó de latir.",
+"Porque tu mirada tiene la dulzura de un amanecer rosado.",
+"Porque contigo reí hasta que me dolió el alma de felicidad.",
+"Porque tus detalles pequeños son los más grandes para mí.",
+"Porque quiero volver a caminar de tu mano sin prisa.",
+"Porque tu presencia vuelve especial cualquier lugar.",
+"Porque, mi Blanquita, contigo descubrí lo que significa querer de verdad.",
+"Porque sigo guardando cada recuerdo nuestro como un tesoro.",
+"Porque tu cariño tiene un brillo que nadie más tiene.",
+"Porque quiero escucharte contar tus sueños otra vez.",
+"Porque a tu lado hasta la lluvia se siente bonita.",
+"Porque me enseñaste a amar con el corazón abierto.",
+"Porque tu paciencia conmigo vale más que mil promesas.",
+"Porque, mi Blanquita, tu bondad es tu mayor belleza.",
+"Porque quiero compartir contigo las pequeñas alegrías de cada día.",
+"Porque tu abrazo es el mejor lugar del mundo.",
+"Porque nadie me hace sentir tan afortunado como tú.",
+"Porque contigo aprendí que el amor también perdona.",
+"Porque tus palabras dulces son mi medicina favorita.",
+"Porque quiero cuidarte como mereces ser cuidada.",
+"Porque tu risa suave me devuelve la paz.",
+"Porque, mi Blanquita, contigo todo tiene más color.",
+"Porque tu corazón es la cosa más pura que conozco.",
+"Porque quiero despertar y saber que sigues siendo mi hogar.",
+"Porque cada canción de amor me recuerda a ti.",
+"Porque tus manos encajan con las mías como si fueran hechas para eso.",
+"Porque me haces sentir comprendido, querido y en paz.",
+"Porque contigo mi mundo se volvió más tierno.",
+"Porque quiero darte los abrazos que me quedaron pendientes.",
+"Porque, mi Blanquita, eres mi casualidad más bonita.",
+"Porque tu forma de mirar la vida me inspira.",
+"Porque lo bueno que vivimos pesa más que cualquier tropiezo.",
+"Porque tu cariño hace florecer lo mejor de mí.",
+"Porque quiero hacerte reír como solo nosotros sabemos.",
+"Porque tu ternura me desarma de la mejor manera.",
+"Porque contigo aprendí a esperar lo que vale la pena.",
+"Porque, mi Blanquita, hasta extrañarte es una forma de amarte.",
+"Porque quiero construir contigo un amor más fuerte y más sincero.",
+"Porque tus buenos días y buenas noches son mi parte favorita del día.",
+"Porque tu esencia es suave como el color rosa de un atardecer.",
+"Porque quiero ser tu lugar seguro, como tú lo eres para mí.",
+"Porque tu forma de amar es un regalo que no quiero perder.",
+"Porque contigo cada día puede ser un nuevo comienzo.",
+"Porque, mi Blanquita, mereces un amor que te elija siempre.",
+"Porque el tiempo no ha borrado lo que siento por ti.",
+"Porque tus detalles me enseñaron lo que es el cariño sincero.",
+"Porque quiero bailar contigo en la cocina sin ningún motivo.",
+"Porque tu sonrisa es mi razón para intentarlo una vez más.",
+"Porque contigo mi corazón se siente en el lugar correcto.",
+"Porque tu nombre es la palabra más dulce que conozco.",
+"Porque quiero escribir contigo un capítulo mejor de nuestra historia.",
+"Porque, mi Blanquita, tu luz sigue siendo mi guía.",
+"Porque has sido mi mejor amiga y mi amor al mismo tiempo.",
+"Porque tu amor me hizo sentir valioso.",
+"Porque quiero pedirte perdón con hechos y no solo con palabras.",
+"Porque contigo todo se siente más suave, más cálido y más real.",
+"Porque tu cariño perfuma mis recuerdos.",
+"Porque quiero verte feliz y ser parte de esa felicidad.",
+"Porque, mi Blanquita, no hay distancia que apague lo que siento.",
+"Porque tu risa contagiosa sigue viviendo en mi memoria.",
+"Porque aprendí que amarte también es escucharte mejor.",
+"Porque contigo quiero ver todos los amaneceres que nos faltan.",
+"Porque tu amor es el hogar donde mi corazón descansa.",
+"Porque quiero cuidarte en los días difíciles y celebrarte en los buenos.",
+"Porque tus ojos son el lugar donde quiero perderme.",
+"Porque, mi Blanquita, contigo entendí que el amor sí existe.",
+"Porque quiero ser mejor para ti y para nosotros.",
+"Porque nuestras mejores historias aún no se han escrito.",
+"Porque tu cariño es mi pétalo favorito en un jardín de recuerdos.",
+"Porque a tu lado el miedo se vuelve valentía.",
+"Porque quiero darte flores, tiempo y todo mi corazón.",
+"Porque, mi Blanquita, eres la mejor decisión que mi corazón tomó.",
+"Porque hay amores que se pausan, pero no se olvidan.",
+"Porque contigo quiero aprender, crecer y construir.",
+"Porque tu ternura hace que el mundo sea un lugar mejor.",
+"Porque te extraño con la parte más sincera de mi alma.",
+"Porque, mi Blanquita, te sigo eligiendo hoy, mañana y siempre. 💗"
+];
+const g=document.getElementById('grid');
+R.forEach((t,i)=>{const c=document.createElement('div');c.className='card';
+c.innerHTML='<div class="num">Razón '+(i+1)+'</div><p></p>';c.querySelector('p').textContent=t;g.appendChild(c)});
+const cnt=document.getElementById('count');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');
+const n=[...g.children].indexOf(e.target)+1;cnt.textContent='Razón '+n+' de 100'}}),{threshold:.25});
+[...g.children].forEach(c=>io.observe(c));
+function heart(){const h=document.createElement('div');h.className='fl';h.textContent=['💗','💕','🌸','💖'][Math.floor(Math.random()*4)];
+h.style.left=Math.random()*100+'vw';h.style.fontSize=(18+Math.random()*26)+'px';h.style.animationDuration=(4+Math.random()*4)+'s';
+document.body.appendChild(h);setTimeout(()=>h.remove(),8000)}
+document.getElementById('btn').onclick=()=>{document.getElementById('yes').style.display='block';
+for(let i=0;i<30;i++)setTimeout(heart,i*120)};
+setInterval(heart,2500);
+</script>
+</body>
+</html>
